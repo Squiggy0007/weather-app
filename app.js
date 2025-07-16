@@ -68,8 +68,8 @@ async function fetchWeather(city) {
   hourlyContainer.classList.add('hidden');
 
   try {
-    // Fetch weather data from backend server
-    const response = await fetch(`/weather?city=${encodeURIComponent(city)}`);
+    // Fetch weather data from deployed backend server
+    const response = await fetch(`https://weather-app-backend-hl8d.onrender.com/weather?city=${encodeURIComponent(city)}`);
     if (!response.ok) {
       throw new Error('City not found or API error');
     }
@@ -189,8 +189,8 @@ function displayHourly(data) {
 
 async function setDynamicBackground(query, cityName) {
   try {
-    // Fetch Unsplash image URL from backend
-    const response = await fetch(`/unsplash?query=${encodeURIComponent(cityName + ' ' + query + ' weather')}`);
+    // Fetch Unsplash image URL from deployed backend server
+    const response = await fetch(`https://weather-app-backend-hl8d.onrender.com/unsplash?query=${encodeURIComponent(cityName + ' ' + query + ' weather')}`);
     if (!response.ok) throw new Error('Unsplash image fetch failed');
     const data = await response.json();
 
