@@ -199,24 +199,24 @@ body.dark-mode .weather-details p {
   text-align: left;
 }
 
-/* Updated forecast-cards container for wrapping and responsive sizing */
 .forecast-cards {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 10px;
   flex-wrap: wrap;
+  overflow: hidden;
 }
 
 .forecast-card {
   background: #e0f7fa;
   border-radius: 10px;
   padding: 15px;
-  flex: 1 1 30%;
-  min-width: 150px;
-  max-width: 250px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   text-align: center;
   transition: background 0.3s ease;
+  flex: 1 1 30%;
+  max-width: 250px;
+  min-width: 140px;
 }
 
 body.dark-mode .forecast-card {
@@ -304,19 +304,21 @@ body.dark-mode .hourly-card {
     gap: 10px;
   }
 
-  .forecast-cards, .hourly-cards {
-    flex-wrap: nowrap;
+  .forecast-cards {
+    justify-content: flex-start;
+    gap: 8px;
   }
 
   .forecast-card {
     flex: 0 0 45%;
+    max-width: 45vw;
+    min-width: auto;
   }
 }
 
-/* Extra responsive fix for very small screens */
 @media (max-width: 480px) {
   .forecast-card {
-    flex-basis: 100%;
+    flex: 0 0 100%;
     max-width: 100%;
   }
 }
