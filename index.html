@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Weather App</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Weather App</h1>
+    <form id="search-form">
+      <input
+        type="text"
+        id="city-input"
+        placeholder="Enter city name"
+        required
+        autocomplete="off"
+      />
+      <button type="submit">Search</button>
+    </form>
+
+    <div class="toggles">
+      <button id="toggle-btn">Show °C</button>
+      <button id="dark-mode-btn">Dark Mode</button>
+    </div>
+
+    <div id="weather-result" class="weather-result hidden">
+      <h2 id="location"></h2>
+      <div id="current-weather" class="current-weather">
+        <img id="weather-icon" alt="Weather Icon" />
+        <div class="temp-condition">
+          <p id="temp" class="temp"></p>
+          <p id="condition" class="condition"></p>
+        </div>
+      </div>
+      <div class="weather-details">
+        <p><strong>Humidity:</strong> <span id="humidity"></span>%</p>
+        <p><strong>Wind:</strong> <span id="wind"></span></p>
+        <p><strong>Sunrise:</strong> <span id="sunrise"></span></p>
+        <p><strong>Sunset:</strong> <span id="sunset"></span></p>
+      </div>
+
+      <div id="forecast" class="forecast hidden">
+        <h3>3-Day Forecast</h3>
+        <div id="forecast-cards" class="forecast-cards"></div>
+      </div>
+
+      <div id="hourly-forecast" class="hourly-forecast hidden">
+        <h3>Hourly Forecast</h3>
+        <div id="hourly-cards" class="hourly-cards"></div>
+      </div>
+    </div>
+
+    <p id="error-message" class="error hidden"></p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
